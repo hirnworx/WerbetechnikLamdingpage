@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
+import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { generateCityContent, getNearbyCitySlugs, SERVICES } from "@/lib/content";
 import LeadForm from "@/components/LeadForm";
@@ -23,7 +24,7 @@ async function getCityBySlug(slug: string) {
     include: { city: true },
   });
   if (redir && redir.city.published) {
-    redirect(`/werbetechnik/${redir.city.slug}`);
+    permanentRedirect(`/werbetechnik/${redir.city.slug}`);
   }
 
   return null;
@@ -121,9 +122,9 @@ export default async function CityPage({ params }: PageProps) {
 
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-gray-500">
-        <a href="/" className="hover:text-brand-600">Home</a>
+        <Link href="/" className="hover:text-brand-600">Home</Link>
         <span className="mx-2">›</span>
-        <a href="/werbetechnik" className="hover:text-brand-600">Standorte</a>
+        <Link href="/werbetechnik" className="hover:text-brand-600">Standorte</Link>
         <span className="mx-2">›</span>
         <span className="text-gray-800">{city.cityName}</span>
       </nav>
