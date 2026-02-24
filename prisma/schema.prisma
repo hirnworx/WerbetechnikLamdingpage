@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model City {
+  id             String         @id @default(cuid())
+  cityName       String
+  slug           String         @unique
+  region         String?
+  shortLocalHook String?
+  published      Boolean        @default(true)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  redirects      SlugRedirect[]
+  leads          Lead[]
+}
+
+model SlugRedirect {
+  id        String   @id @default(cuid())
+  oldSlug   String   @unique
+  cityId    String
+  city      City     @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  citySlug  String
+  name      String
+  email     String
+  phone     String?
+  service   String
+  message   String
+  city      City     @relation(fields: [citySlug], references: [slug])
+  createdAt DateTime @default(now())
+}
