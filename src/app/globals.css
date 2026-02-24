@@ -2,6 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(51, 102, 255, 0.15);
+    color: #131c57;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  .glass-dark {
+    background: rgba(19, 28, 87, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #131c57 0%, #1433e1 50%, #3366ff 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #f99d07 0%, #ffbf20 100%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #1433e1 0%, #3366ff 60%, #5990ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-elevated {
+    @apply rounded-2xl border border-gray-100 bg-white shadow-card transition-all duration-300;
+  }
+
+  .card-elevated:hover {
+    @apply shadow-card-hover -translate-y-1 border-gray-200;
+  }
+
+  .input-modern {
+    @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900
+      placeholder:text-gray-400
+      transition-all duration-200
+      focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+      bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white
+      shadow-md shadow-brand-600/20
+      transition-all duration-200
+      hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/30 hover:-translate-y-0.5
+      active:translate-y-0 active:shadow-md
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+      bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white
+      shadow-md shadow-accent-500/25
+      transition-all duration-200
+      hover:bg-accent-600 hover:shadow-lg hover:shadow-accent-500/35 hover:-translate-y-0.5
+      active:translate-y-0 active:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+      border-2 border-white/30 px-6 py-3.5 text-sm font-semibold text-white
+      transition-all duration-200
+      hover:bg-white/10 hover:border-white/50;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-28;
+  }
 }

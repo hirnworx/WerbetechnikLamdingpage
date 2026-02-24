@@ -4,7 +4,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Printvertise – Werbetechnik in Ihrer Stadt",
@@ -15,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={inter.className}>
-      <body className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+    <html lang="de" className={inter.variable}>
+      <body className="min-h-screen bg-white font-sans text-gray-900 antialiased">
         <Header />
         <main>{children}</main>
         <Footer />
