@@ -3,8 +3,8 @@ import FadeIn from "./FadeIn";
 const stats = [
   { value: "500+", label: "Projekte realisiert" },
   { value: "15+", label: "Jahre Erfahrung" },
-  { value: "50+", label: "Städte in Deutschland" },
-  { value: "98%", label: "Kundenzufriedenheit" },
+  { value: "100%", label: "Kostenlos & unverbindlich" },
+  { value: "24h", label: "Vergleichsangebot" },
 ];
 
 export default function StatsSection() {

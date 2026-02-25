@@ -131,7 +131,7 @@ export default async function CityPage({ params }: PageProps) {
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link href="#kontakt" className="btn-accent !py-4 !px-8">
-            Kostenlos anfragen
+            Kostenfreies Vergleichsangebot
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -170,6 +170,50 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Process / So funktioniert's */}
+      <section className="section-padding bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <FadeIn>
+            <div className="text-center">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-600">So einfach geht&apos;s</span>
+              <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+                {content.process.heading}
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="mt-14 grid gap-8 sm:grid-cols-3">
+            {content.process.steps.map((step, i) => (
+              <FadeIn key={i} delay={i * 120}>
+                <div className="relative text-center">
+                  {/* Step number */}
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-xl font-bold text-brand-700">
+                    {i + 1}
+                  </div>
+                  {/* Connector line (hidden on last) */}
+                  {i < content.process.steps.length - 1 && (
+                    <div className="absolute top-7 left-[calc(50%+2rem)] hidden h-px w-[calc(100%-4rem)] bg-brand-200 sm:block" />
+                  )}
+                  <h3 className="mt-5 text-lg font-semibold text-gray-900">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-500">{step.text}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <FadeIn delay={400}>
+              <Link href="#kontakt" className="btn-accent">
+                Kostenfreies Vergleichsangebot erhalten
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Trust / Why us */}
       <section className="section-padding bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -198,7 +242,7 @@ export default async function CityPage({ params }: PageProps) {
 
                 <div className="mt-8">
                   <Link href="#kontakt" className="btn-primary">
-                    Projekt besprechen
+                    Vergleichsangebot anfordern
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
@@ -284,7 +328,7 @@ export default async function CityPage({ params }: PageProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <span>Kostenlose Erstberatung</span>
+                    <span>Kostenfreies Vergleichsangebot</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
@@ -292,7 +336,7 @@ export default async function CityPage({ params }: PageProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <span>Antwort innerhalb von 24 Stunden</span>
+                    <span>Vergleichsangebot in 24 Stunden</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
@@ -300,7 +344,7 @@ export default async function CityPage({ params }: PageProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
                       </svg>
                     </div>
-                    <span>Unverbindliches Festpreisangebot</span>
+                    <span>Transparente Preisaufstellung – keine versteckten Kosten</span>
                   </div>
                 </div>
               </FadeIn>

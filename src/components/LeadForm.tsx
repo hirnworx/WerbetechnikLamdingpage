@@ -58,9 +58,9 @@ export default function LeadForm({ citySlug, cityName }: Props) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <p className="mt-4 text-xl font-semibold text-emerald-800">Vielen Dank für Ihre Anfrage!</p>
+        <p className="mt-4 text-xl font-semibold text-emerald-800">Ihr Vergleichsangebot ist auf dem Weg!</p>
         <p className="mt-2 text-emerald-700">
-          Wir melden uns innerhalb eines Werktages bei Ihnen.<br />
+          Wir erstellen Ihnen ein detailliertes Vergleichsangebot und melden uns innerhalb eines Werktages.<br />
           Ihr Printvertise-Team in {cityName}.
         </p>
       </div>
@@ -182,7 +182,7 @@ export default function LeadForm({ citySlug, cityName }: Props) {
             </>
           ) : (
             <>
-              Kostenlos anfragen
+              Vergleichsangebot erhalten
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -190,7 +190,7 @@ export default function LeadForm({ citySlug, cityName }: Props) {
           )}
         </button>
         <p className="text-xs text-gray-400">
-          Kostenlos & unverbindlich · Antwort in 24h
+          100 % kostenlos & unverbindlich · Vergleichsangebot in 24h
         </p>
       </div>
     </form>

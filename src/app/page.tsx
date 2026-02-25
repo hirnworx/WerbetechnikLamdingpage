@@ -47,12 +47,12 @@ export default async function Home() {
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
               Professionelle Beschriftungen, Schilder, Folierungen und Leuchtreklame –
-              direkt in Ihrer Stadt. Persönlich, schnell und in höchster Qualität.
+              direkt in Ihrer Stadt. Erhalten Sie jetzt Ihr kostenfreies Vergleichsangebot.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link href="/werbetechnik" className="btn-accent !py-4 !px-8 !text-base">
-                Standort finden
+                Kostenfreies Vergleichsangebot
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
@@ -169,12 +169,12 @@ export default async function Home() {
               Bereit für Ihren neuen Auftritt?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
-              Kontaktieren Sie uns für ein kostenloses, unverbindliches Angebot.
-              Wir freuen uns auf Ihr Projekt.
+              Erhalten Sie jetzt Ihr kostenfreies Vergleichsangebot – transparent,
+              unverbindlich und innerhalb von 24 Stunden.
             </p>
             <div className="mt-8">
               <Link href="/werbetechnik" className="btn-accent !py-4 !px-8 !text-base">
-                Standort wählen & anfragen
+                Kostenfreies Vergleichsangebot
               </Link>
             </div>
           </FadeIn>
